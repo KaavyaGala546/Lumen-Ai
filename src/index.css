@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --color-ink: #161513;
+  --color-ink-2: #1e1c19;
+  --color-ink-3: #26231f;
+  --color-ink-4: #322e28;
+  --color-line: #3d3832;
+  --color-line-2: #524c44;
+  --color-mist: #9c9488;
+  --color-paper: #f3efe6;
+  --color-mute: #d6cfc4;
+  --color-cyan: #d97706;
+  --color-cyan-2: #f59e0b;
+  --color-cyan-dim: #3f2a12;
+  --color-brass: #ea580c;
+  --color-brass-2: #fb923c;
+  --color-rose: #dc2626;
+  --color-sage: #65a30d;
+  --color-violet: #a8a29e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+html {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  background: var(--color-ink);
+}
+
+button,
+a {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(217, 119, 6, 0.35);
+  color: white;
+}
+
+.font-serif {
+  font-family: var(--font-sans);
+  font-weight: 650;
+  letter-spacing: -0.03em;
+}
+
+.grain::after,
+.cone,
+.ticker,
+.pulse-ring,
+.scan,
+.float-y {
+  display: none;
+}
+
+.live-dot {
+  animation: live 1.6s ease-in-out infinite;
+}
+
+@keyframes live {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.bar-grow {
+  transform-origin: bottom;
+}
+
+.drawer-in,
+.toast-in {
+  animation: none;
+}
+
+.alert-flash {
+  outline: 1px solid rgba(220, 38, 38, 0.55);
+}
+
+:focus-visible {
+  outline: 1px solid var(--color-cyan);
+  outline-offset: 2px;
+}
+
+input[type="range"] {
+  appearance: none;
+  height: 2px;
+  background: var(--color-line);
+  border-radius: 0;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 0;
+  background: var(--color-cyan);
+  border: 0;
+  cursor: pointer;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
